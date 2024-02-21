@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 const { Pool } = require("pg");
 
 class CrDbPool {
@@ -8,7 +9,7 @@ class CrDbPool {
         if (CrDbPool.#instance instanceof CrDbPool)
             return CrDbPool.#instance;
 
-        const connectionString = "postgresql://root@localhost:26257/defaultdb?sslmode=disable";
+        const connectionString = process.env.CRDB_URI;
         this.pool = new Pool({
           connectionString,
           application_name: "test2",
