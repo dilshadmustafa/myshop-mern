@@ -1,8 +1,9 @@
 const { Pool } = require("pg");
+require('dotenv').config();
 
 // Run the transactions in the connection pool
 (async () => {
-    const connectionString = "postgresql://root@localhost:26257/defaultdb?sslmode=disable";
+    const connectionString = process.env.CRDB_URI;
     const pool = new Pool({
       connectionString,
       application_name: "test2",

@@ -1,4 +1,4 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
 const { Pool } = require("pg");
 
 class CrDbPool {
@@ -25,8 +25,10 @@ class CrDbPool {
     }
 };
 
+const crDbPool = new CrDbPool();
+
 module.exports = {
-    CrDbPool
+    CrDbPool, crDbPool
 };
 
 

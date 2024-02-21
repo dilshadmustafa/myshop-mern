@@ -1,7 +1,7 @@
 
 // write code to connect to cockroachdb
 const { Pool, Client } = require('pg');
-const { process } = require('dotenv');
+require('dotenv').config();
 
 const client = new Client({
       user: process.env.CRDB_USER,
@@ -9,7 +9,7 @@ const client = new Client({
       database: process.env.CRDB_DATABASE,
       password: process.env.CRDB_PASSWORD,
       port: process.env.CRDB_PORT,
-      ssl: process.env.CRDB_SSL
+      ssl: process.env.CRDB_SSL === "true" ? true : false
 });
 
 // read data from table
