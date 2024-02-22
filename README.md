@@ -9,7 +9,7 @@ Introduction
 
 sops/age tool is used to secure secrets, passwords, API keys, database connection string, etc. by encrypting those values.
 
-Usually .env file contains these secrets. You cannot find .env file anywhere in this repo as it's created by sops/age tool only inside the secure server instance after decrypting .env.age file. This is done by init.sh script. Ofcourse this will work only with your SSH private key.
+Usually .env file contains these secrets. You cannot find .env file anywhere in this repository as it's created by sops/age tool only inside the secure server instance after decrypting .env.age file. This is done by init.sh script. Ofcourse this will work only with your SSH private key.
 
 **init.sh script**
                     
