@@ -1,11 +1,5 @@
 Welcome to MyShop
 =================
-
-<br>
-<br>
-
-[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H4V87SN5M2GG2)
-
 Introduction
 -------------
 
@@ -15,15 +9,15 @@ Introduction
 
 sops/age tool is used to secure secrets, passwords, API keys, database connection string, etc. by encrypting those values.
 
-Usually .env file contains these secrets. You cannot find .env file anywhere in this repo as it's created by sops/age tool only inside the secure server instance after decrypting .env.age file. This is done by init.sh script.
+Usually .env file contains these secrets. You cannot find .env file anywhere in this repo as it's created by sops/age tool only inside the secure server instance after decrypting .env.age file. This is done by init.sh script. Ofcourse this will work only with your SSH private key.
 
-**init.sh**
+**init.sh script**
                     
                 age -d -i ~/.ssh/id_ed25519 .env.age > .env
                 
 Also when pushing code to git repo, .env file will not be pushed to repo. Sops/age tool is used to encrypt .env file to .env.age file and only encrypted file is stored. This is done by gitpush.sh script.
 
-**gitpush.sh**
+**gitpush.sh script**
                     
                 age -R ~/.ssh/id_ed25519.pub .env > .env.age
                 git add .
@@ -32,7 +26,7 @@ Also when pushing code to git repo, .env file will not be pushed to repo. Sops/a
 
 Also in .gitignore file there is an entry to ignore .env files. So git push will not push those files to git repo. Also for additional security, the git repo can be made into private repository only accessible by your organization.
 
-**.gitignore**
+**.gitignore file**
 
                 .env
 
@@ -83,4 +77,8 @@ module.exports = {
 License
 -------------
 
-MIT License
+Copyright (c) Dilshad Mustafa 2024. MIT License.
+
+Please Support This Project
+---------------------------
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H4V87SN5M2GG2)
