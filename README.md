@@ -36,9 +36,9 @@ Authentication using JWT.
 
 > **Multiple Back-end Database Options:**
 
-The code can be ported to various database back-end options like Postgres, MySQL, CockroachDB, Firebase and Supabase. An example connection pool implementation is provided for CockroachDB.
+The code can be ported to various database back-end options like Postgres, MySQL, CockroachDB, Firebase and Supabase. An example connection pool implementation is provided for CockroachDB which is pgwire compatible with Postgres database.
 
-**PostgreSQL/CockroachDB Connection Pool crdbpool.js**
+**Postgres/CockroachDB Connection Pool crdbpool.js**
 
 ```
 require('dotenv').config();
